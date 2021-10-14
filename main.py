@@ -35,5 +35,7 @@ while True:
         print("balance = ", account_1.balance)
     elif choice == "3":
         account_1.update_balance(int(input("amount to be reduced : ")))
+    elif choice == "4":
+        account_1.new_transaction(to_ = input("to account number : "), amount=int(input("Amount to be sent : ")))
     else:
         print("wrong input!")
