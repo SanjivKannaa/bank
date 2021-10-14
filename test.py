@@ -21,9 +21,24 @@ def make_new_transaction(from_, to_, amount):
     return True
 
 
-f = account(source = input("bank/company name : "), account_no=input("account number (if any) : "), password=input("password (if any) : "), initial_balance=int(input("Enter the initial amount to be put in the account : ")))
+f = open("account_handler.bin", "rb")
+d = dict(pickle.load(f))
+f.close()
+print(d)
+for i in d.keys():
+    print(d[i], d[i].account_no)
+
+
+
+
+exit()
+
+f = account(source = "bank", account_no='12345', password="password", initial_balance=100)
+f2 = account(source = "bank", account_no='12344', password="password", initial_balance=100)
 d = {
-    0 : f
+    0 : f,
+    1 : f2
 }
 
-print(d[0].account_no)
+for i in d.keys():
+    print(d[i], d[i].account_no)

@@ -22,13 +22,13 @@ def make_new_transaction(from_, to_, amount):
 def login():
     print("WELCOME TO BANK!")
     print("\n\n Please LOGIN to continue...")
-    account_no = input("account number : ")
+    account_number = input("account number : ")
     password = input("password : ")
     d = open("account_handler.bin", "rb")
     account_handler = dict(pickle.load(d))
     d.close()
     for i in account_handler.keys():
-        if account_handler[i].account_no == account_no:
+        if account_handler[i].account_no == account_number:
             return i
     print("\n\nWrong credentials!")
     time.sleep(1)
